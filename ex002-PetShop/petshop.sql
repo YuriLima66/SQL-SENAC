@@ -1,3 +1,20 @@
+/*Dada a correção da atividade de PetShop, crie um arquivo em linguagem SQL de acordo com as solicitações abaixo não esqueça de testar no XAMPP, anexe as 5 telas capturadas, anexe o link do GitHub com as linhas de código SQL e essa atividade como comentário nas linhas de código. 
+
+Crie um banco de dados utilizando a linguagem SQL
+Crie as 4 tabelas de cliente, veterinário, consulta e animal, contendo em cada uma das tabelas o seu atributo com seu respectivo datatype. (Capture a tela do XAMPP)
+Realize a alteração do atributo da tabela cliente de nomecliente para nomecompleto (Capture a tela do XAMPP)
+Realize a alteração do datatype motivo de (200) caracteres para (500) caracteres (Captura a tela do XAMPP)
+delete o atributo nomeanimal da tabela animal, depois adicionei novamente o atributo com o nome: nomeanimalzinho
+realize uma pesquisa na documentação de como insere dados em uma tabela existente, insira os dados "Ana Claudia Cunha" para nome da cliente, telefone 11999998888, e cpf 1144444411 na tabela do cliente. (Capture a tela do XAMPP)
+Por fim, realize a exclusão dos dados da tabela cliente
+Realize a exclusão de cada uma das tabelas
+Realize a exclusão do banco de dados (Capture a tela do XAMPP)
+
+
+Essa atividade pode ser feita em dupla, mas a entrega final é individual. */
+
+
+
 -- Cria o banco de dados
 CREATE DATABASE ClinicaVeterinaria;
 
@@ -36,7 +53,7 @@ CREATE TABLE Consulta (
     idAnimal INT,
     dataConsulta DATE,
     motivo VARCHAR(200),
-    FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente),
+    FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente) ON DELETE CASCADE,
     FOREIGN KEY (idVeterinario) REFERENCES Veterinario(idVeterinario),
     FOREIGN KEY (idAnimal) REFERENCES Animal(idAnimal)
 );
